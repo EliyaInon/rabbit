@@ -1,15 +1,15 @@
-
 version: '3'
 services:
-	image: client:latest
+  client:
+    image: client:latest
     container_name: client_container
     restart: always
     ports:
      - "3002:3000"
     networks:
      - "rabbit-comunication"
-	 
-	image: server:latest
+  server:
+    image: server:latest
     container_name: server_container
     restart: always
     ports:
@@ -17,4 +17,4 @@ services:
     networks:
      - "rabbit-comunication"
 networks:
-  rabbit-comunication:
+    rabbit-comunication:
